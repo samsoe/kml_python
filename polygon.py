@@ -5,10 +5,12 @@ import pandas as pd
 
 kml = simplekml.Kml()
 
+polygon_boundary = [(18.43348,-33.98985), (18.43387,-33.99004),
+                    (18.43410,-33.98972), (18.43371,-33.98952),
+                    (18.43348,-33.98985)]
+
 pol = kml.newpolygon(name="Atrium Garden",
-                     outerboundaryis=[(18.43348,-33.98985), (18.43387,-33.99004),
-                                      (18.43410,-33.98972), (18.43371,-33.98952),
-                                      (18.43348,-33.98985)])
+                     outerboundaryis=polygon_boundary)
 
 kml_path = './polygon.kml'
 kml.save(kml_path)
