@@ -1,5 +1,7 @@
 import csv
 import simplekml
+import subprocess # open kml in google earth
+import pandas as pd
 
 kml = simplekml.Kml()
 
@@ -11,4 +13,8 @@ pol = kml.newpolygon(name="Atrium Garden",
                                       (18.43401,-33.98974), (18.43376,-33.98962),
                                       (18.43360,-33.98982)])
 
-kml.save('polygon.kml')
+kml_path = './polygon.kml'
+kml.save(kml_path)
+
+# open with Google Earth Pro
+subprocess.call(['open', kml_path]);
